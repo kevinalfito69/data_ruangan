@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+</head>
+    <title>Document</title>
+  </head>
+  <body >
+ <style>
+   
+ </style>
+    <h1>Data Pegawai</h1>
+    <hr>
+    
+    <table class='table'  align="center"  style='text-align:center'>
+      <tr class='head'>
+        <th>id Pegawai</th>
+
+        <th>Nama</th>
+
+        <th>Jenis kelamin</th>
+        <th>Jabatan</th>
+      </tr>
+      
+
+      {% for i in myvar %}
+      <tr>
+        <td>{{i.id_pegawai}}</td>
+        <td>{{i.nama}}</td>
+        <td>{{i.jenis_kelamin}}</td>
+        <td>{{i.jabatan}}</td>
+      </tr>
+     
+
+      {% endfor %}
+    </table>
+    <hr>
+
+  </body>
+</html>

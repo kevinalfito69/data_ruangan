@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Import data</title>
+    <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
+</head>
+  </head>
+  <body>
+    <!-- As a link -->
+
+    <div class="container">
+      <nav class="navbar bg-light">
+        <div class="container-fluid d-inline-flex align-items-center">
+          <a class="navbar-brand gap-2" href="/admin/"
+            >Back
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
+              <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+              <path
+                d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+              /></svg
+          ></a>
+        </div>
+      </nav>
+
+      <table class="table table-hover">
+        <tr>
+          <td>Data barang</td>
+          <td>
+            <a style="text-decoration: none; float: right" href="/databarang_pdf" class="p-2 rounded-2 text-white bg-success badge">Import</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Data pegawai</td>
+          <td><a style="text-decoration: none; float: right" href="/datapegawai_pdf" class="p-2 rounded-2 text-white bg-success badge">Import</a></td>
+        </tr>
+        <tr>
+          <td>Data Report In</td>
+          <td><a style="text-decoration: none; float: right" href="" class="p-2 rounded-2 text-white bg-success badge">Import</a></td>
+        </tr>
+        <tr>
+          <td>Data Report Out</td>
+          <td><a style="text-decoration: none; float: right" href="" class="p-2 rounded-2 text-white bg-success badge">Import</a></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
