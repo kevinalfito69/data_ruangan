@@ -107,6 +107,7 @@ USE_TZ = True
 JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 JAZZMIN_UI_TWEAKS = {
     "theme": "flatly",
+    "small_text": "body"
 }
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

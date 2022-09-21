@@ -9,11 +9,11 @@ JAZZMIN_SETTINGS = {
     "site_brand": "Data Ruangan",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo":"./media/team.png",
+    "site_logo": "./media/team.png",
 
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo":"./media/team.png",
+    "login_logo": "./media/team.png",
 
     # Logo to use for login form in dark themes (defaults to login_logo)
     "login_logo_dark": None,
@@ -27,7 +27,7 @@ JAZZMIN_SETTINGS = {
     # Welcome text on the login screen
     "welcome_sign": "Selamat datang di aplikasi Data Ruangan",
 
-   
+
 
     # The model admin to search from the search bar, search bar omitted if excluded
     "search_model": "auth.User",
@@ -43,17 +43,18 @@ JAZZMIN_SETTINGS = {
     "topmenu_links": [
 
         # Url that gets reversed (Permissions can be added)
-        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Home",  "url": "admin:index",
+            "permissions": ["auth.view_user"]},
 
         # external url that opens in a new window (Permissions can be added)
-       
+
 
         # model admin to link to (Permissions checked against model)
         {"model": "auth.User"},
         {"model": "core.data_barang"},
 
         # App with dropdown menu to all its models pages (Permissions checked against models)
-       
+
     ],
 
     #############
@@ -62,7 +63,7 @@ JAZZMIN_SETTINGS = {
 
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
-    
+
         {"model": "auth.user"}
     ],
 
@@ -88,8 +89,8 @@ JAZZMIN_SETTINGS = {
     # Custom links to append to app groups, keyed on app name
     "custom_links": {
         "core": [{
-            "name": "Import Data", 
-            "url": "/import", 
+            "name": "Import Data",
+            "url": "/import",
             "icon": "fas fa-file-pdf",
         }]
     },
@@ -102,8 +103,8 @@ JAZZMIN_SETTINGS = {
         "auth.Group": "fas fa-users",
         "core.pegawai": "fas fa-users",
         "core.data_barang": "fas fa-box",
-        "core.report_in":"fas fa-door-open",
-        "core.report_out":"fas fa-door-closed",
+        "core.report_in": "fas fa-door-open",
+        "core.report_out": "fas fa-door-closed",
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
@@ -122,7 +123,7 @@ JAZZMIN_SETTINGS = {
     "custom_css": None,
     "custom_js": None,
     # Whether to show the UI customizer on the sidebar
-    "show_ui_builder": False,
+    "show_ui_builder": True,
 
     ###############
     # Change view #
@@ -137,5 +138,5 @@ JAZZMIN_SETTINGS = {
     # override change forms on a per modeladmin basis
     "changeform_format_overrides": {"auth.user": "single", "auth.group": "vertical_tabs"},
     # Add a language dropdown into the admin
-   
+
 }
