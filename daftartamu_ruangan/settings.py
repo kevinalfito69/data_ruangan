@@ -98,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 
@@ -108,7 +108,9 @@ JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 JAZZMIN_UI_TWEAKS = {
     "theme": "flatly",
     "small_text": "body"
+    "navbar_variants"
 }
+DATETIME_FORMAT = '%d-%m-%Y %H:%M:%S'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 

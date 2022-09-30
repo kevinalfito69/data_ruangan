@@ -1,11 +1,21 @@
 from django.contrib import admin
-from .models import (pegawai, report_in, report_out, data_barang)
+from .models import (pegawai, masuk, keluar, data_dokumen)
 # Register your models here.
-class reportin_admin(admin.ModelAdmin):
+
+
+class masuk_admin(admin.ModelAdmin):
     readonly_fields = ["tanggal_masuk"]
-class reportout_admin(admin.ModelAdmin):
-     readonly_fields = ["tanggal_keluar"]
+    fieldsets = (
+        ("general", {"fields": ("id_pegawai", "kegiatan", "pinjam_dokumen")}),
+        ("time", {"fields": ["jam_masuk", "tanggal_masuk"]}),
+    )
+
+
+class keluar_admin(admin.ModelAdmin):
+    readonly_fields = ["tanggal_keluar"]
+
+
 admin.site.register(pegawai)
-admin.site.register(data_barang)
-admin.site.register(report_in, reportin_admin)
-admin.site.register(report_out,reportout_admin)
+admin.site.register(data_dokumen)
+admin.site.register(masuk, masuk_admin)
+admin.site.register(keluar, keluar_admin)

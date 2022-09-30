@@ -102,14 +102,15 @@ JAZZMIN_SETTINGS = {
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
         "core.pegawai": "fas fa-users",
-        "core.data_barang": "fas fa-box",
-        "core.report_in": "fas fa-door-open",
-        "core.report_out": "fas fa-door-closed",
+        "core.data_dokumen": "fas fa-file",
+        "core.masuk": "fas fa-door-open",
+        "core.keluar": "fas fa-door-closed",
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
-
+    # order
+    "order_with_respect_to": ["core.data_dokumen", "core.masuk", "core.keluar"],
     #################
     # Related Modal #
     #################

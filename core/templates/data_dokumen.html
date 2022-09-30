@@ -13,26 +13,25 @@
  <style>
    
  </style>
-    <h1>Rekap data Pegawai</h1>
+    <h1>Data Barang</h1>
     <hr>
     
     <table class='table'  align="center"  style='text-align:center'>
       <tr class='head'>
-        <th>id Pegawai</th>
+        <th>Nama Barang</th>
 
-        <th>Nama</th>
+        <th>Tanggal di tambah</th>
 
-        <th>Jenis kelamin</th>
-        <th>Jabatan</th>
+        <th>Jumlah</th>
       </tr>
-      
+     
+     
 
       {% for i in myvar %}
       <tr>
-        <td>{{i.id_pegawai}}</td>
-        <td>{{i.nama}}</td>
-        <td>{{i.jenis_kelamin}}</td>
-        <td>{{i.jabatan}}</td>
+        <td>{{i.nama_dokumen}}</td>
+        <td>{{i.jenis_dokumen}}</td>
+        <td>{{i.tanggal_ditambah}}</td>
       </tr>
      
 

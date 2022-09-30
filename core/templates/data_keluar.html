@@ -13,25 +13,23 @@
  <style>
    
  </style>
-    <h1>Data Barang</h1>
+    <h1>Rekap data keluar</h1>
     <hr>
     
     <table class='table'  align="center"  style='text-align:center'>
       <tr class='head'>
-        <th>Nama Barang</th>
+        <th>Data peminjam</th>
 
-        <th>Tanggal di tambah</th>
+        <th>Tanggal keluar</th>
 
-        <th>Jumlah</th>
+        
       </tr>
-     
-     
+      
 
       {% for i in myvar %}
       <tr>
-        <td>{{i.nama_barang}}</td>
-        <td>{{i.tanggal_ditambah}}</td>
-        <td>{{i.jumlah}}</td>
+        <td>{{i.data_peminjam}}</td>
+        <td>{{i.tanggal_keluar}}</td>
       </tr>
      
 
