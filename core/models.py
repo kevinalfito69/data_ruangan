@@ -1,6 +1,8 @@
 from email.policy import default
 from enum import auto
-
+from django.db.models.signals import post_delete
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 from django.db import models
 
@@ -18,7 +20,7 @@ class pegawai(models.Model):
     jenis_kelamin = models.CharField(choices=kelamin, max_length=10)
 
     def __str__(self):
-        return ("{}, {}").format(self.id_pegawai, self.nama)
+        return ("({}) {}").format(self.id_pegawai, self.nama)
 
     class Meta:
 
@@ -35,10 +37,15 @@ class masuk(models.Model):
 
     def __str__(self):
         return ("{}, {},{}").format(self.id_pegawai, self.pinjam_dokumen, self.jam_masuk)
-
     class Meta:
-        verbose_name_plural = "Data masuk"
-
+        verbose_name_plural = "Data masuk Ruangan"
+@receiver(post_save, sender=masuk)
+def update_jumlah_exemplar(sender, instance, **kwargs):
+    if instance.pinjam_dokumen:
+        dokumen = instance.pinjam_dokumen
+        if dokumen.jumlah_exemplar > 0:
+            dokumen.jumlah_exemplar -= 1
+            dokumen.save()
 
 class keluar(models.Model):
     data_peminjam = models.ForeignKey(
@@ -51,13 +58,22 @@ class keluar(models.Model):
 
     class Meta:
 
-        verbose_name_plural = "Data keluar"
+        verbose_name_plural = "Data keluar Ruangan"
+@receiver(post_save, sender=keluar)
+def increase_exemplar_count(sender, instance, **kwargs):
+    if instance.data_peminjam:
+        dokumen = instance.data_peminjam.pinjam_dokumen
+        if dokumen:
+            dokumen.jumlah_exemplar += 1
+            dokumen.save()
 
 
 class data_dokumen(models.Model):
     nama_dokumen = models.CharField(max_length=200)
     jenis_dokumen = models.CharField(max_length=200)
+    jumlah_exemplar = models.PositiveIntegerField(default=1)  # Field untuk jumlah salinan
     tanggal_ditambah = models.DateField()
+
 
     def __str__(self):
         return self.nama_dokumen

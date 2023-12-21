@@ -18,20 +18,25 @@
     
     <table class='table'  align="center"  style='text-align:center'>
       <tr class='head'>
+        <th>NO</th>
         <th>Nama Barang</th>
 
-        <th>Tanggal di tambah</th>
+        <th>Jenis Dokument</th>
 
-        <th>Jumlah</th>
+        <th>Tanggal ditambah</th>
+        <th>Jumlah Exemplar</th>
       </tr>
      
      
 
       {% for i in myvar %}
       <tr>
+        
+        <td>{{ forloop.counter }}</td>
         <td>{{i.nama_dokumen}}</td>
         <td>{{i.jenis_dokumen}}</td>
         <td>{{i.tanggal_ditambah}}</td>
+        <td>{{i.jumlah_exemplar }}</td>
       </tr>
      
 
@@ -41,3 +46,4 @@
 
   </body>
 </html>
+
